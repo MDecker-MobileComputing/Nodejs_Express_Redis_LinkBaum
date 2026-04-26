@@ -1,0 +1,19 @@
+{% extends "basis.html" %}
+
+{% block inhalt %}
+
+<p>{{ linkbaum.beschreibung }}</p>
+
+<br><br>
+
+<ul>
+{% for eintrag in linkbaum.linkEintragList %}
+    <li>
+        <a href="{{ eintrag.url }}" target="_blank">
+            {{ eintrag.linkTitel }}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
