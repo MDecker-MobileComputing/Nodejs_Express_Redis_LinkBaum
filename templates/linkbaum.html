@@ -7,10 +7,10 @@
 <br><br>
 
 <ul>
-{% for eintrag in linkbaum.linkEintragList %}
+{% for eintrag in linkbaum.linkArray %}
     <li>
         <a href="{{ eintrag.url }}" target="_blank">
-            {{ eintrag.linkTitel }}
+            {{ eintrag.titel }}
         </a>
     </li>
 {% endfor %}

@@ -32,4 +32,22 @@ export async function initialisiereDaten() {
         await setLinkBaum( "dhbw", dhbwBaum );
         logger.info( "Link-Baum \"dhbw\" angelegt." );
     }
+
+    const baumSchonDa2 = await istLinkBaumVorhanden( "android" );
+    logger.info( "Link-Baum \"android\" schon da: " + baumSchonDa2 );
+    if ( baumSchonDa2 == false ) {
+
+        const linkAndroid1 = new LinkEintrag( "Offizieller Android-Dev-Blog"  , "https://android-developers.googleblog.com/" );
+        const linkAndroid2 = new LinkEintrag( "API-Level"                     , "https://apilevels.com/"                     );
+        const linkAndroid3 = new LinkEintrag( "Android API"                   , "https://developer.android.com/reference"    );
+        const linkAndroid4 = new LinkEintrag( "Nachrichten \"Android Police\"", "https://www.androidpolice.com/"             );
+
+        const linkAndroidArray = [ linkAndroid1, linkAndroid2, linkAndroid3, linkAndroid4 ];
+        const androidBaum = new LinkBaum( "Android-Programmierung",
+                                          "Info-Quellen für Android-Entwickler",
+                                          linkAndroidArray );
+
+        await setLinkBaum( "android", androidBaum );
+        logger.info( "Link-Baum \"android\" angelegt." );
+    }
 }
