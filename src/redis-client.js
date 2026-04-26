@@ -70,3 +70,15 @@ export async function fetchLinkBaum( linkBaumId ) {
     return null;
   }
 } 
+
+
+/**
+ * Zählt die Anzahl der Link-Bäume, die im Redis-Server gespeichert sind.
+ * 
+ * @returns Anzahl der Link-Bäume
+ */
+export async function getAnzahlLinkBaeume() {
+
+  const keys = await redisClient.keys( "linkbaum:*" );
+  return keys.length;
+}

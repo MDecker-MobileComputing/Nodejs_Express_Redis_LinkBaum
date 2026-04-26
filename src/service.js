@@ -1,6 +1,6 @@
 import createLogger from "logging";
 
-import { istLinkBaumVorhanden, setLinkBaum } from "./redis-client.js";
+import { istLinkBaumVorhanden, setLinkBaum, getAnzahlLinkBaeume } from "./redis-client.js";
 
 import { LinkEintrag } from "./LinkEintrag.js";
 import { LinkBaum }    from "./LinkBaum.js";
@@ -50,4 +50,7 @@ export async function initialisiereDaten() {
         await setLinkBaum( "android", androidBaum );
         logger.info( "Link-Baum \"android\" angelegt." );
     }
+
+    const anzahlLinkBaeume = await getAnzahlLinkBaeume();
+    logger.info( "Anzahl Link-Bäume im Redis-Server: " + anzahlLinkBaeume );
 }
