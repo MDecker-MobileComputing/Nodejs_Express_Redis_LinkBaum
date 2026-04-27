@@ -25,8 +25,8 @@ export async function initialisiereDaten() {
         const linkDhbw5 = new LinkEintrag( "YouTube"  , "https://www.youtube.com/channel/UCe5bTJ_lECQ7DiU_NXQMilQ" );
 
         const linkDhbwArray = [ linkDhbw1, linkDhbw2, linkDhbw3, linkDhbw4, linkDhbw5 ];
-        const dhbwBaum = new LinkBaum( "DHBW Karlsruhe", 
-                                       "Duale Hochschule Baden-Württemberg Karlsruhe", 
+        const dhbwBaum = new LinkBaum( "DHBW Karlsruhe",
+                                       "Duale Hochschule Baden-Württemberg Karlsruhe",
                                        linkDhbwArray );
 
         await setLinkBaum( "dhbw", dhbwBaum );
@@ -39,7 +39,7 @@ export async function initialisiereDaten() {
 
         const linkAndroid1 = new LinkEintrag( "Offizieller Android-Dev-Blog"  , "https://android-developers.googleblog.com/" );
         const linkAndroid2 = new LinkEintrag( "API-Level"                     , "https://apilevels.com/"                     );
-        const linkAndroid3 = new LinkEintrag( "Android API"                   , "https://developer.android.com/reference"    );
+        const linkAndroid3 = new LinkEintrag( "Android API-Dokumentation"     , "https://developer.android.com/reference"    );
         const linkAndroid4 = new LinkEintrag( "Nachrichten \"Android Police\"", "https://www.androidpolice.com/"             );
 
         const linkAndroidArray = [ linkAndroid1, linkAndroid2, linkAndroid3, linkAndroid4 ];
