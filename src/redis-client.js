@@ -42,7 +42,8 @@ export async function istLinkBaumVorhanden( linkBaumId ) {
  */
 export async function setLinkBaum( linkBaumId, linkBaumObjekt ) {
 
-  await redisClient.set( `linkbaum:${linkBaumId}`, JSON.stringify( linkBaumObjekt ) );
+  await redisClient.set( `linkbaum:${linkBaumId}`,
+                         JSON.stringify( linkBaumObjekt ) );
 }
 
 
@@ -51,7 +52,8 @@ export async function setLinkBaum( linkBaumId, linkBaumObjekt ) {
  *
  * @param {string} linkBaumId ID von Link-Baum, der geholt werden soll
  *
- * @returns {Promise<LinkBaum|null>} Das Link-Baum-Objekt, falls vorhanden, sonst `null`
+ * @returns {Promise<LinkBaum|null>} Das Link-Baum-Objekt, falls vorhanden,
+ *                                   sonst `null`
  */
 export async function fetchLinkBaum( linkBaumId ) {
 
